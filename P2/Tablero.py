@@ -449,8 +449,8 @@ def update_output(pathname, n_clicks, dropdow_value,input_value,dropdown_col,inp
             else:
                 recomendacion="Tienes una probabilidad baja, lo que significa que tu corazón esta sano."
 
-            return html.Div([
-                html.H4("Tu probabilidad de tener una enfermedad cardiovascular es de :" +str(round(proba[0]*100,1))+ "%"),
+            return html.Div([ html.Br(),
+                html.H4("Tu probabilidad de tener una enfermedad cardiovascular es de :" +str(round(proba[0]*100,2))+ "%"),
                 html.P(recomendacion)
                              ])
         
