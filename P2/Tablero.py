@@ -437,13 +437,13 @@ def update_output(pathname, n_clicks, dropdow_value,input_value,dropdown_col,inp
             P1 = infer.query(['num'], evidence={'age': edad,'sex':sexo, 'chol':col,'fbs':fbs,"anom_thalach":anom_thalach})
             proba= P1.values
 
-            if proba[0]>0.3:
+            if proba[0]>0.5:
                 recomendacion="Tienes una probabilidad alta, deberias ir al médico para revisar cómo esta tu corazón."
             else:
                 recomendacion="Tienes una probabilidad baja, lo que significa que tu corazón esta sano."
 
-            return html.Div([
-                html.H4("Tu probabilidad de tener una enfermedad cardiovascular es de :" +str(round(proba[0]*100,1))+ "%"),
+            return html.Div([ html.Br(),
+                html.H4("Tu probabilidad de tener una enfermedad cardiovascular es de :" +str(round(proba[0]*100,3))+ "%"),
                 html.P(recomendacion)
                              ])
         
